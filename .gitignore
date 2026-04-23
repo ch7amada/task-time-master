@@ -24,6 +24,9 @@ data/csv_data/*
 node_modules/
 npm-debug.log*
 
+# CSS build output (compiled from app.css by Tailwind CLI)
+static/style.css
+
 # Environment variables
 .env
 .env.*
