@@ -1,0 +1,55 @@
+<tr id="row-{{ entry.id }}">
+    <td class="p-1 h-px">
+        <input class="input w-full h-full text-xl text-center" type="text" name="date"
+        value="{{ entry.date.strftime('%d.%m.%Y %H:%M') }}" 
+        hx-get="/{{entry.id}}" 
+        hx-trigger="change"
+        hx-include="this" 
+        hx-target="#row-{{ entry.id }}" 
+        hx-swap="outerHTML">
+    </td>
+    <td class="p-1 h-px">
+        <input class="input w-full h-full text-xl text-center" type="number" name="type"
+               value="{{ entry.type }}"
+               hx-get="/{{ entry.id }}"
+               hx-trigger="change"
+               hx-include="this"
+               hx-target="#row-{{ entry.id }}"
+               hx-swap="outerHTML">
+    </td>
+    <td class="p-1 h-px">
+        <input class="input w-full h-full text-xl text-center" type="text" name="task"
+               value="{{ entry.task }}"
+               hx-get="/{{ entry.id }}"
+               hx-trigger="change"
+               hx-include="this"
+               hx-target="#row-{{ entry.id }}"
+               hx-swap="outerHTML">
+    </td>
+    <td class="p-1 h-px">
+        <input class="input w-full h-full text-xl text-center" type="number" name="costbearer"
+               value="{{ entry.costbearer }}"
+               hx-get="/{{ entry.id }}"
+               hx-trigger="change"
+               hx-include="this"
+               hx-target="#row-{{ entry.id }}"
+               hx-swap="outerHTML">
+    </td>
+    <td class="p-1 h-px">
+        <input class="input w-full h-full text-xl text-center" type="number" step="0.25" name="duration"
+               value="{{ entry.duration }}"
+               hx-get="/{{ entry.id }}"
+               hx-trigger="change"
+               hx-include="this"
+               hx-target="#row-{{ entry.id }}"
+               hx-swap="outerHTML">
+    </td>
+    <td>
+        <button class="btn btn-error"
+                hx-delete="/{{ entry.id }}"
+                hx-target="#row-{{ entry.id }}"
+                hx-swap="outerHTML">
+            Delete
+        </button>
+    </td>
+</tr>
